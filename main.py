@@ -2,14 +2,14 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from webdriver_manager.chrome import ChromeDriverManager
 import os
 import time
 
 
 def scrape_top_news():
 
-    browser = webdriver.Chrome(
-        executable_path="/Users/akjasim/chromedriver/chromedriver")
+    browser = webdriver.Chrome(ChromeDriverManager().install())
 
     wait = WebDriverWait(browser, 10)
     browser.get('https://news.ycombinator.com/')
