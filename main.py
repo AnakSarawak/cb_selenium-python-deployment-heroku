@@ -8,7 +8,7 @@ import time
 
 
 def scrape_top_news():
-
+    port = process.env.PORT || 8000
     chrome_options = webdriver.ChromeOptions()
     chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
     chrome_options.add_argument("--headless")
@@ -29,8 +29,9 @@ def scrape_top_news():
         except Exception as e:
             print(e)
     time.sleep(2)
+    server.listen(port)
     browser.quit()
-
+    
 
 if __name__ == '__main__':
     scrape_top_news()
