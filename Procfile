@@ -1,1 +1,1 @@
-web: python main.py
+web: gunicorn main:scrape_top_news
