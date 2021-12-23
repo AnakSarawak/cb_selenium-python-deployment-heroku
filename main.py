@@ -7,7 +7,7 @@ import os
 import time
 
 
-def scrape_top_news():
+def app():
     
     chrome_options = webdriver.ChromeOptions()
     chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
@@ -32,4 +32,4 @@ def scrape_top_news():
     
 
 if __name__ == '__main__':
-    scrape_top_news()
+    app()
